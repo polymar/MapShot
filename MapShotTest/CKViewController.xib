@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CKViewController">
+            <connections>
+                <outlet property="containerView" destination="pSe-v9-2Lm" id="0Kb-qp-uUl"/>
+                <outlet property="mapShotButton" destination="VTS-Ii-2lo" id="Izo-ha-7vQ"/>
+                <outlet property="mapView" destination="SPU-q2-D1c" id="K2U-Hz-mQj"/>
+                <outlet property="markersButton" destination="tbZ-SL-2fG" id="Wsc-Dg-46J"/>
+                <outlet property="polylineButton" destination="EXV-Xb-EPf" id="Ca3-ae-ATR"/>
+                <outlet property="view" destination="iN0-l3-epB" id="gc9-dx-Z28"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SPU-q2-D1c">
+                    <rect key="frame" x="0.0" y="248" width="320" height="320"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="320" id="34g-Pu-k3Z"/>
+                    </constraints>
+                </mapView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSe-v9-2Lm">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="248"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbZ-SL-2fG">
+                            <rect key="frame" x="20" y="109" width="56" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Markers">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="addMarkers:" destination="-1" eventType="touchUpInside" id="Rsk-0b-NEW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXV-Xb-EPf">
+                            <rect key="frame" x="133" y="109" width="54" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Polyline">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="addPolyline:" destination="-1" eventType="touchUpInside" id="A5w-AO-OLX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTS-Ii-2lo">
+                            <rect key="frame" x="237" y="109" width="63" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="MapShot">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="takeShot:" destination="-1" eventType="touchUpInside" id="SUF-EI-YKP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="VTS-Ii-2lo" secondAttribute="trailing" constant="20" id="7fq-S6-8Yn"/>
+                        <constraint firstItem="tbZ-SL-2fG" firstAttribute="leading" secondItem="pSe-v9-2Lm" secondAttribute="leading" constant="20" id="C61-BM-R1Q"/>
+                        <constraint firstAttribute="bottom" secondItem="tbZ-SL-2fG" secondAttribute="bottom" constant="109" id="N6K-6p-Qdh"/>
+                        <constraint firstAttribute="bottom" secondItem="EXV-Xb-EPf" secondAttribute="bottom" constant="109" id="kvJ-zo-PPY"/>
+                        <constraint firstItem="EXV-Xb-EPf" firstAttribute="leading" secondItem="tbZ-SL-2fG" secondAttribute="trailing" constant="57" id="q5h-sD-D4g"/>
+                        <constraint firstAttribute="bottom" secondItem="VTS-Ii-2lo" secondAttribute="bottom" constant="109" id="uxp-xL-m2Y"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SPU-q2-D1c" secondAttribute="trailing" id="AC3-AH-7hv"/>
+                <constraint firstItem="SPU-q2-D1c" firstAttribute="top" secondItem="pSe-v9-2Lm" secondAttribute="bottom" id="Cci-iN-9vx"/>
+                <constraint firstAttribute="bottom" secondItem="SPU-q2-D1c" secondAttribute="bottom" id="VDx-7m-oie"/>
+                <constraint firstItem="pSe-v9-2Lm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lnh-16-uWs"/>
+                <constraint firstAttribute="trailing" secondItem="pSe-v9-2Lm" secondAttribute="trailing" id="rfv-Vq-u82"/>
+                <constraint firstItem="pSe-v9-2Lm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sBO-vM-E94"/>
+                <constraint firstItem="SPU-q2-D1c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vel-ic-XV3"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
